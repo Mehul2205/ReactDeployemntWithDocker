@@ -4,7 +4,7 @@ sudo: required
 servies:
   - docker
 before_install:
-  - docker build -t mehul2205/ReactDeployemntWithDocker -f Dockerfile.dev .
+  - docker build -t mehul2205/react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true mehul2205/ReactDeployemntWithDocker npm run test
+  - docker run -e CI=true mehul2205/react npm run test
