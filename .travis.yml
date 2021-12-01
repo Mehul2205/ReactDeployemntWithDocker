@@ -12,7 +12,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: ${process.env.SECRET_KEY}
+    secure: b00f4c11-aba1-4127-87ca-faf3b11b3376
   app: mehul2205-react-app-docker
   skip_cleanup: true
   on:
