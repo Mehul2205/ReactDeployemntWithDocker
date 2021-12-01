@@ -12,7 +12,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: 731664c9-d94b-4b31-aa05-49b471757941
+    secure: ${process.env.SECRET_KEY}
   app: mehul2205-react-app-docker
   on:
     branch: master
