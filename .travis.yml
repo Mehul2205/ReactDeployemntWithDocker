@@ -14,5 +14,6 @@ deploy:
   api_key:
     secure: ${process.env.SECRET_KEY}
   app: mehul2205-react-app-docker
+  skip_cleanup: true
   on:
     branch: master
