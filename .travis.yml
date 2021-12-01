@@ -1,18 +1,15 @@
 language: generic
-
 sudo: required
 servies:
-  - docker
+- docker
 before_install:
-  - docker build -t mehul2205/react -f Dockerfile.dev .
-
+- docker build -t mehul2205/react -f Dockerfile.dev .
 script:
-  - docker run -e CI=true mehul2205/react npm run test
-
+- docker run -e CI=true mehul2205/react npm run test
 deploy:
   provider: heroku
   api_key:
-    secure: b00f4c11-aba1-4127-87ca-faf3b11b3376
+    secure: cMZArZOsfRmRX4/rJDM1Ukx/Qj8MmJ33JsCZsteGDN7S2HaydAPNxAfFQA937wi4UFsZ6oGcJjrkfkqSl3z556NAF7kfNfgW/p02mxNV/5Bwp5At77GKfYj9c16O8/h44jhofkxjhXsA1CF9B0ETeiUr3I+8raqEdnWg27ftQYubTa2yO9ZFM9/cTf5VlsOJtCClKU0w/041ANq8jru2Jbb4d3Hpr6BIzdP8Idi+fjMHzKdeDM6+AMIcic0CSXloMY11RJK2EY8y+aaSHSijdDzUnW2RH1XM130HcdyVAQGlV2A2pGY3Tui8OtjR38Eo6TNdAwdcAvoo4PU5uSRH4EhHj8kQ3z54IuZ/hJHIcSXj4pShQn9Lz9AZ4MUnjvu+r4d4G3y/iySJLdAfWdTnOsvrPvxxuxtDGIzZXbO7Eu9o8vPFnw2Gl94bIOUf0q4nqkfDudNsK1JtVdJDcmTt/fCFzxo7oSEN7PpFhdm8qe2DAg5IUPFR01P5zQRzZyXHhMtNFsJ39GCFx+cmTFGcEOfO01ahrTCCbs3vaRP0EzGXEpYKi+efC+8p7E2SWWn4U2ckByguw1SvU9taeX0iOheNhpy+K3T39V0uO6OJy1DuNiMTRoRNbscnjD1kFsiPOMG4gURdAW+tkcJCXzQotiZHanm2GmtJO3MICAVJ/O4=
   app: mehul2205-react-app-docker
   skip_cleanup: true
   on:
