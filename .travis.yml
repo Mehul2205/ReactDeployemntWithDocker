@@ -1,0 +1,12 @@
+language: generic
+
+sudo: required
+
+servies:
+  - docker
+
+before_install:
+  - docker build -t mehul2205/ReactDeployemntWithDocker -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true mehul2205/ReactDeployemntWithDocker npm run test
